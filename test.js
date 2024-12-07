@@ -1,14 +1,19 @@
-// 
-// I need to split the strings into arrays
-// 
-// 1,1,0,1   0,1,0,1
-// 1,1,0,1   1,0,1,0
-// 1,0,1     0,1,0
-// 1,0,1     1,0,0
-// 0,
-// Brute force way would be to use nested for loop;
-// check if the students gets what he wants if he does pop him from the array
-// if he doesn't remove him and push him to the back of the queue
-// if that happens we don't increment i 
 
+function breadthFirsthSearch() {
+  let currentNode = this.root;
 
+  let list = []
+  let queue = []
+  queue.push(currentNode)
+
+  while (queue.length > 0) {
+    currentNode = queue.shift()
+    list.push(currentNode.val)
+    if (currentNode.left) {
+      queue.push(currentNode.left)
+    }
+    if (currentNode.right) {
+      queue.push(currentNode.right)
+    }
+  }
+}
