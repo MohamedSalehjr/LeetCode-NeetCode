@@ -1,6 +1,7 @@
 function breadthFirsthSearch() {
   let currentNode = this.root;
 
+<<<<<<< Updated upstream
   let list = [];
   let queue = [];
   queue.push(currentNode);
@@ -71,3 +72,13 @@ function dfs(root) {
 
   return [balanced ? 1 : 0, height];
 }
+=======
+let nums = [1,1,1,1]
+
+function test(nums){
+    console.log(nums)
+}
+
+
+test(nums)
+>>>>>>> Stashed changes
