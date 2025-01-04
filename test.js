@@ -1,30 +1,23 @@
-let array = [2, 20, 4, 10, 3, 4, 5];
-let sorted = array.sort((a, b) => a - b);
+let numbers = [1, 2, 3, 4],
+  target = 3;
 
-console.log(sorted);
-let nums = [1, 2, 2, 3, 3, 3];
-let k = 2;
-
-function topK(nums, k) {
+function twoSum(numbers, target) {
+  let l = 0;
+  let r = numbers.length - 1;
   let res = [];
-  let numMap = new Map();
-  for (let n of nums) {
-    if (numMap.has(n)) {
-      numMap.set(n, numMap.get(n) + 1);
+  while (l < r) {
+    let sum = numbers[l] + numbers[r];
+    console.log(sum);
+    if (sum === target) {
+      return [l + 1, r + 1];
+    } else if (sum < target) {
+      l++;
     } else {
-      numMap.set(n, 1);
+      r--;
     }
-  }
-
-  const mapSort = new Map([...numMap.entries()].sort((a, b) => b[1] - a[1]));
-  let i = 0;
-  for (let n of mapSort) {
-    if (i >= k) break;
-    res.push(n[0]);
-    i++;
   }
 
   return res;
 }
 
-console.log(topK(nums, k));
+console.log(twoSum(numbers, target));
