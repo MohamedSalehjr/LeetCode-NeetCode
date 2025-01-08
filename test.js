@@ -21,3 +21,5 @@ function twoSum(numbers, target) {
 }
 
 console.log(twoSum(numbers, target));
+
+console.log(Math.ceil(10 / 9));
