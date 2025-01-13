@@ -27,3 +27,30 @@ function lengthOfLongestSubstring(s) {
 }
 
 console.log(lengthOfLongestSubstring(s));
+
+function lengthOfLongestSubstringTwp(s) {
+  if (!s) {
+    return 0;
+  }
+  let res = 1;
+  let l = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    let l = i + 1;
+    let subSet = new Set();
+    let streak = 1;
+    subSet.add(s[i]);
+
+    while (l < s.length) {
+      if (!subSet.has(s[l])) {
+        streak++;
+        subSet.add(s[l]);
+        l++;
+      } else {
+        break;
+      }
+    }
+    res = Math.max(res, streak);
+  }
+  return res;
+}
