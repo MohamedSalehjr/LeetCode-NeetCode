@@ -29,3 +29,7 @@ function isAnagram(s, t) {
 
   return true;
 }
+
+function isAnagram2(s, t) {
+  return s.split("").sort().join("") === t.split("").sort().join("");
+}
