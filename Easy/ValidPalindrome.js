@@ -1,4 +1,4 @@
-let s = "tab a cat";
+let s = "Was it a car or a cat I saw?";
 
 //filter out any other char
 // join the sctring into one coehisive string
@@ -38,3 +38,20 @@ function isChar(c) {
 }
 
 console.log(isPalindrome(s));
+
+function isPalindrome(s) {
+  let arr = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (isChar(s[i])) {
+      arr.push(s[i]);
+    }
+  }
+
+  let normalStr = arr.join("").toLowerCase();
+  let reversedStr = arr.reverse().join("").toLowerCase();
+  console.log(normalStr);
+  console.log(reversedStr);
+
+  return normalStr === reversedStr;
+}
